@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
+
+/* Body Format */
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #14171A;
+    color: white;
+    font-family: 'DM Mono', monospace;
+}
+
+.project-name {
+    text-align: center;
+    font-size: 25px;
+}
+
+
+/* Format for the grid of pokemon cards */
+.pokemon-cards {
+    display: flex;
+    padding: 3rem;
+    overflow-x: scroll;
+}
+
+.pokemon-cards::-webkit-scrollbar {
+    width: 10px;
+    height: 15px;
+}
+
+.pokemon-cards::-webkit-scrollbar-thumb {
+    background: #657786;
+    border-radius: 15px;
+    box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+}
+
+.pokemon-cards::-webkit-scrollbar-track {
+    background: linear-gradient(90deg,#14171A,#14171A 1px,#14171A 0,#14171A);
+    margin: 45px;
+}
+
+
+/* Format for the card itself */
+.card {
+    width: 180px;
+    height: 240px;
+    min-width: 200px;
+    background: #657786;
+    box-shadow: -1rem 0 4rem #000;
+    border-radius: 16px;
+    padding: 4rem;
+    
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+     
+    transition: .2s;
+}
+
+.card:hover {
+    transform: translateY(-1rem);
+}
+
+.card:hover~.card {
+    transform: translateX(130px);
+}
+
+.card:not(:first-child) {
+    margin-left: -130px;
+}
+
+/* Card Button*/
+.card-button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    border-radius: 16px;
+}
+
+/* Pokemon name */
+.pokemon-name {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+
+/* Pokemon image */
+.pokemon-img{
+    display: block;
+    width: 200px;
+    height: 200px;
+    align-items: center;
+}
+
+
+/* Pop out*/
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content{
+    width: 400px;
+    height: 600px;
+    background-color: #657786;
+    border-radius:  15px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    font-size: 40px;
+    transform: rotate(45deg);
+    right: 15px;
+    cursor: pointer;
+}
+
+.modal-tittle {
+    font-size: 40px;
+    top: 15px;
+    position: relative;
+    text-transform: capitalize;
+}
+
+.modal-img{
+    width: 250px;
+    max-height: 250px;
+    margin-top: 25px;
+    align-items: center;
+}
+
+.modal-description {
+    font-size: 30px;
+    text-align: center;
+    margin: auto;
+    position: relative;
+}
+
